@@ -1,16 +1,65 @@
-# 🧠 AI / Machine Learning — Semaine 01
+# 🤖 AI-MACHINE-LEARNING
 
-> **Période : 3 → 6 septembre 2026**
-> **Dimanche 6 septembre : bilan hebdomadaire**
-> **Objectif de la semaine : comprendre ce qu'est réellement un modèle de Machine Learning et être capable d'en construire un premier très simple.**
+Parcours personnel d'apprentissage du **Machine Learning, Deep Learning et des LLMs**, réalisé en collaboration avec un partenaire.
 
 ---
 
-# 🗂️ STRUCTURE DU DÉPÔT GITHUB
+## 🎯 Objectif global
 
-Nous allons volontairement garder une structure **simple et facile à maintenir**.
+Construire une compréhension solide et pratique de l'IA, depuis les fondamentaux mathématiques et du Machine Learning jusqu'à la compréhension, l'entraînement et la personnalisation de modèles modernes.
 
-Le dépôt sera organisé par semaines.
+À terme, être capable de :
+
+* comprendre comment fonctionne un modèle de Machine Learning ;
+* comprendre les mathématiques utilisées par les modèles ;
+* implémenter les mécanismes fondamentaux soi-même ;
+* entraîner des modèles ;
+* comprendre les réseaux de neurones et le backpropagation ;
+* comprendre les embeddings et les Transformers ;
+* comprendre l'architecture et le fonctionnement des LLMs ;
+* prendre un modèle open source et le personnaliser / fine-tuner ;
+* évaluer correctement un modèle ;
+* puis, dans une étape ultérieure, rendre ces modèles exploitables via des APIs, applications, agents, RAG, etc.
+
+> ⚠️ L'objectif n'est pas de simplement savoir utiliser des bibliothèques d'IA.
+>
+> L'objectif est de **comprendre ce qui se passe sous le capot et être capable de le reproduire soi-même à petite échelle.**
+
+---
+
+# 🗺️ Roadmap
+
+| Semaine | Période            | Thème                                                  | Statut      |
+| ------- | ------------------ | ------------------------------------------------------ | ----------- |
+| 01      | 03 → 06 sept.      | Fondamentaux : modèle, données, paramètres, prédiction | 🟡 En cours |
+| 02      | 07 → 13 sept.      | Vecteurs, normes, distances, produit scalaire          | ⬜           |
+| 03      | 14 → 20 sept.      | Matrices et transformations                            | ⬜           |
+| 04      | 21 → 27 sept.      | Dérivées, fonction de coût, règle de chaîne            | ⬜           |
+| 05      | 28 sept. → 04 oct. | Gradient Descent                                       | ⬜           |
+| 06      | 05 → 11 oct.       | Régression linéaire                                    | ⬜           |
+| 07      | 12 → 18 oct.       | Classification et régression logistique                | ⬜           |
+| 08      | 19 → 25 oct.       | Évaluation, overfitting, underfitting, régularisation  | ⬜           |
+| 09      | 26 oct. → 01 nov.  | Réseaux de neurones et forward pass                    | ⬜           |
+| 10      | 02 → 08 nov.       | Backpropagation                                        | ⬜           |
+| 11      | 09 → 15 nov.       | PyTorch et entraînement réel                           | ⬜           |
+| 12      | 16 → 22 nov.       | Embeddings, attention et Transformers                  | ⬜           |
+| 13      | 23 → 29 nov.       | Modèles open source et fine-tuning                     | ⬜           |
+| 🏁      | 30 nov.            | Examen pratique final                                  | ⬜           |
+
+### Légende
+
+* ⬜ À faire
+* 🟡 En cours
+* 🟢 Validé
+* 🔴 À retravailler
+
+> Les dates sont indicatives. Le parcours est **adaptatif** : une notion non maîtrisée doit être retravaillée avant de passer à la suivante.
+
+---
+
+# 📚 Organisation du dépôt
+
+Chaque semaine possède son propre espace de travail.
 
 ```text
 AI-MACHINE-LEARNING/
@@ -32,1321 +81,276 @@ AI-MACHINE-LEARNING/
 │   └── bilan/
 │
 ├── semaine-03/
-│   ├── README.md
-│   ├── exercices/
-│   ├── code/
-│   ├── calculs/
-│   └── bilan/
+│   └── ...
 │
 └── ...
 ```
 
-### Principe
+### 📌 Rôle des dossiers
 
-Chaque semaine possède donc :
+**`README.md` racine**
 
-```text
-semaine-X/
-│
-├── README.md      ← plan + cours + exercices + validation
-├── exercices/     ← réponses aux exercices
-├── code/          ← code écrit pendant la semaine
-├── calculs/       ← calculs papier / captures
-└── bilan/         ← bilan du dimanche
-```
+Vue d'ensemble du parcours et suivi de progression.
 
-Le **README.md est le document principal**.
+**`semaine-X/README.md`**
 
-Tout ce que nous faisons pendant la semaine doit pouvoir être retrouvé depuis celui-ci.
+Cours, programme, exercices et critères de validation de la semaine.
 
----
+**`exercices/`**
 
-# 📂 QUE METTRE DANS CHAQUE DOSSIER ?
+Réponses aux exercices et raisonnements.
 
-## `README.md`
+**`code/`**
 
-C'est le fichier que nous sommes en train de lire.
+Implémentations Python et expériences.
 
-Il contient :
+**`calculs/`**
 
-* les objectifs ;
-* les notions à apprendre ;
-* le programme de chaque jour ;
-* les exercices ;
-* les questions ;
-* le niveau attendu ;
-* les critères de validation ;
-* la checklist du dimanche.
+Calculs réalisés sur papier, photos ou captures.
+
+**`bilan/`**
+
+Erreurs, difficultés, validation et score de la semaine.
 
 ---
 
-## `exercices/`
+# 🧠 Méthode d'apprentissage
 
-On y place les réponses aux exercices.
+Chaque notion doit être validée sur **4 niveaux** :
 
-Exemple :
+### 1. Comprendre
 
-```text
-exercices/
-├── EX-01.md
-├── EX-02.md
-└── EX-03.md
-```
+Être capable d'expliquer la notion avec ses propres mots.
 
-Chaque exercice doit contenir :
+### 2. Calculer
 
-```markdown
-# EX-01
+Être capable de résoudre un exercice à la main.
 
-## Énoncé
+### 3. Implémenter
 
-...
+Être capable de coder le mécanisme sans copier une solution.
 
-## Mon raisonnement
+### 4. Expliquer
 
-...
+Être capable d'enseigner la notion à son partenaire et de répondre à ses questions.
 
-## Ma réponse
-
-...
-
-## Vérification
-
-...
-
-## Erreur éventuelle
-
-...
-
-## Ce que j'ai appris
-
-...
-```
-
-### Règle
-
-**Le raisonnement doit apparaître avant la réponse.**
-
-Même si la réponse est fausse.
-
-Cela nous permettra d'identifier précisément nos erreurs.
+Une notion n'est considérée comme **🟢 validée** que lorsque les quatre niveaux sont suffisamment maîtrisés.
 
 ---
 
-# ✏️ `calculs/`
+# 💻 Règle concernant l'IA
 
-Tous les calculs réalisés sur papier sont conservés ici.
+L'IA peut être utilisée comme :
 
-Exemple :
+* professeur ;
+* source d'explications ;
+* outil de vérification ;
+* générateur d'indices ;
+* outil d'analyse des erreurs.
 
-```text
-calculs/
-├── CALC-01.jpg
-├── CALC-02.jpg
-└── CALC-03.jpg
-```
+Mais elle ne doit pas remplacer le travail d'apprentissage.
 
-Une photo/capture est parfaitement acceptable.
+### ❌ À éviter
 
-Il n'est pas nécessaire de retaper tous les calculs dans Markdown.
+* copier du code sans le comprendre ;
+* demander directement la solution d'un exercice ;
+* faire du *vibecoding* ;
+* recopier une implémentation sans être capable de la refaire seul.
 
-### Exemple
+### ✅ À privilégier
 
-```text
-calculs/
-└── CALC-01-prediction.jpg
-```
-
-Si un calcul est réalisé directement dans le README, on peut également l'écrire.
-
-Mais pour les exercices importants :
-
-> **on garde une trace du travail papier.**
-
----
-
-# 💻 `code/`
-
-Tous les programmes écrits pendant la semaine.
-
-Exemple :
-
-```text
-code/
-├── CODE-01-model.py
-├── CODE-02-experiment.py
-└── CODE-03-test.py
-```
-
-Pour chaque exercice de code, le README indique quel fichier correspond à l'exercice.
-
-Exemple :
-
-```markdown
-## CODE-01
-
-Fichier : `code/CODE-01-model.py`
-```
+1. réfléchir seul ;
+2. écrire son raisonnement ;
+3. essayer sur papier ;
+4. coder soi-même ;
+5. identifier son erreur ;
+6. demander un indice si nécessaire ;
+7. corriger ;
+8. refaire l'exercice sans aide.
 
 ---
 
-# 📋 `bilan/`
+# 👥 Travail en collaboration
 
-Ce dossier contient le compte rendu du dimanche.
+Le dépôt est partagé entre deux personnes :
 
-```text
-bilan/
-├── README.md
-├── erreurs.md
-└── validation.md
-```
+* **Boss**
+* **Collaborateur**
 
-### `bilan/README.md`
+Chaque personne doit effectuer elle-même les exercices et implémentations importants.
 
-Il contient :
-
-* ce que nous avons appris ;
-* ce que nous savons faire ;
-* nos difficultés ;
-* nos erreurs ;
-* nos questions restantes ;
-* notre score ;
-* les notions validées ;
-* les notions à revoir ;
-* l'objectif de la semaine suivante.
-
----
-
-# 👥 TRAVAIL À DEUX
-
-Nous sommes deux.
-
-Le dépôt doit permettre de savoir qui a produit quoi, mais sans créer une structure compliquée.
-
-Pour les exercices individuels, nous utiliserons simplement le nom/prénom ou un identifiant.
-
-Exemple :
-
-```text
-exercices/
-├── EX-01-boss.md
-├── EX-01-collaborateur.md
-```
-
-Pour le code :
-
-```text
-code/
-├── CODE-01-boss.py
-└── CODE-01-collaborateur.py
-```
-
-Pour les calculs :
-
-```text
-calculs/
-├── CALC-01-boss.jpg
-└── CALC-01-collaborateur.jpg
-```
-
-Cela permet de comparer les raisonnements sans multiplier les dossiers.
-
----
-
-# 🔀 GIT
-
-Nous utiliserons également Git de manière simple.
+Structure Git :
 
 ```text
 main
-│
 ├── boss
-│
 └── collaborateur
 ```
 
-Chacun travaille sur sa branche.
+Avant la validation hebdomadaire :
 
-À la fin de la semaine :
-
-1. chacun pousse son travail ;
-2. chacun regarde le travail de l'autre ;
-3. on corrige les éventuelles erreurs ;
-4. le travail validé rejoint `main`.
-
----
-
-# 📝 CONVENTION DES COMMITS
-
-Utiliser des messages simples et explicites.
-
-```text
-feat: add first model
-docs: add exercise answers
-docs: add weekly questions
-test: validate prediction
-fix: correct calculation
-review: validate week 01
-```
-
-Éviter :
-
-```text
-update
-test
-final
-new
-aaa
-final-final
-```
+1. chacun termine son travail ;
+2. chacun relit le travail de l'autre ;
+3. les erreurs sont corrigées ;
+4. les notions difficiles sont discutées ;
+5. le bilan est rempli ;
+6. les modifications sont fusionnées dans `main`.
 
 ---
 
-# 🎯 OBJECTIF GÉNÉRAL DE LA SEMAINE
+# 📊 Validation hebdomadaire
 
-À la fin de cette première semaine, nous devons être capables de répondre clairement à cette question :
+Chaque semaine est évaluée sur **20 points**.
 
-> **Qu'est-ce qu'un modèle de Machine Learning et comment apprend-il à partir de données ?**
-
-Nous ne cherchons pas encore à utiliser des bibliothèques complexes.
-
-Nous voulons comprendre le mécanisme **de l'intérieur**.
-
----
-
-# 📚 À LA FIN DE LA SEMAINE, NOUS DEVONS COMPRENDRE
-
-* ce qu'est une donnée ;
-* ce qu'est une feature ;
-* ce qu'est une cible (`target`) ;
-* ce qu'est un paramètre ;
-* ce qu'est une prédiction ;
-* ce qu'est un modèle ;
-* la différence entre programmation classique et Machine Learning ;
-* ce que signifie entraîner un modèle ;
-* ce que signifie faire une prédiction ;
-* comment un modèle peut apprendre une relation à partir d'exemples ;
-* pourquoi les paramètres du modèle sont importants.
-
----
-
-# 📅 ORGANISATION
-
-| Jour                | Travail                  | Validation                       |
-| ------------------- | ------------------------ | -------------------------------- |
-| 🟢 Jeudi 03/09      | Qu'est-ce qu'un modèle ? | Compréhension fondamentale       |
-| 🟢 Samedi 05/09     | Premier modèle apprenant | Implémentation + expérimentation |
-| 🔵 Dimanche 06/09   | Bilan                    | Examen + validation              |
-| ⚪ Mercredi/Vendredi | Repos / rattrapage       | Facultatif                       |
-
----
-
-# 🟢 JOUR 1 — 03 SEPTEMBRE
-
-# 🧠 Notion : modèle, données et apprentissage
-
-## Objectif
-
-Comprendre la différence entre :
-
-```text
-Programme classique
-        ↓
-Règles écrites par le programmeur
-        ↓
-Résultat
-```
-
-et :
-
-```text
-Machine Learning
-        ↓
-Données + résultats connus
-        ↓
-Apprentissage
-        ↓
-Modèle
-        ↓
-Prédiction
-```
-
----
-
-# 📚 À APPRENDRE
-
-## 1. Donnée
-
-Comprendre ce qu'est une donnée utilisée par un modèle.
-
-Exemple :
-
-```text
-surface = 100 m²
-chambres = 3
-prix = 200 000 €
-```
-
-Identifier :
-
-* les informations disponibles ;
-* l'information que nous cherchons à prédire.
-
----
-
-## 2. Feature
-
-Une **feature** est une caractéristique utilisée comme entrée du modèle.
-
-Exemple :
-
-```text
-surface
-nombre de chambres
-distance au centre-ville
-```
-
-Ces informations constituent les entrées `X`.
-
----
-
-## 3. Target
-
-La cible est ce que le modèle doit apprendre à prédire.
-
-Exemple :
-
-```text
-X = [100, 3, 5]
-y = 200000
-```
-
----
-
-## 4. Paramètres
-
-Comprendre qu'un modèle possède des paramètres internes qui déterminent son comportement.
-
-Nous introduirons notamment :
-
-```text
-w
-b
-```
-
-où :
-
-* `w` représente un poids ;
-* `b` représente un biais.
-
----
-
-## 5. Prédiction
-
-Le modèle reçoit une entrée :
-
-```text
-X
-```
-
-et produit :
-
-```text
-ŷ
-```
-
-où `ŷ` représente la prédiction.
-
----
-
-# ✏️ EXERCICES — JOUR 1
-
-## EX-01 — Identifier les éléments
-
-On possède les données suivantes :
-
-| Surface | Chambres | Prix |
-| ------: | -------: | ---: |
-|      50 |        2 |  100 |
-|      80 |        3 |  150 |
-|     120 |        4 |  230 |
-
-Sur papier, identifier :
-
-1. `X`
-2. `y`
-3. les features
-4. la target
-
-### Fichier attendu
-
-```text
-calculs/CALC-01-identification.jpg
-```
-
-et :
-
-```text
-exercices/EX-01-boss.md
-exercices/EX-01-collaborateur.md
-```
-
----
-
-## EX-02 — Raisonnement
-
-Un modèle reçoit :
-
-```text
-surface = 100
-```
-
-et prédit :
-
-```text
-ŷ = 180
-```
-
-alors que la vraie valeur est :
-
-```text
-y = 200
-```
-
-Questions :
-
-1. Quelle est l'entrée ?
-2. Quelle est la prédiction ?
-3. Quelle est la vraie valeur ?
-4. Le modèle a-t-il fait une erreur ?
-5. De combien ?
-
-### Fichier attendu
-
-```text
-exercices/EX-02-boss.md
-exercices/EX-02-collaborateur.md
-```
-
----
-
-# 🧠 QUESTIONS DE VALIDATION — JOUR 1
-
-Vous devez répondre **sans regarder les notes**.
-
-### Niveau 1 — Comprendre
-
-* Qu'est-ce qu'une donnée ?
-* Qu'est-ce qu'une feature ?
-* Qu'est-ce qu'une target ?
-* Quelle différence entre `y` et `ŷ` ?
-* Qu'est-ce qu'un paramètre ?
-
-### Niveau 2 — Expliquer
-
-Expliquez avec vos propres mots :
-
-> Pourquoi dit-on qu'un modèle de Machine Learning "apprend" ?
-
-Puis :
-
-> Quelle différence entre écrire une règle permettant de calculer un prix et entraîner un modèle à prédire ce prix ?
-
-### Niveau 3 — Défendre
-
-Votre partenaire doit vous poser au minimum **3 questions imprévues**.
-
-Vous devez être capables de défendre votre réponse sans consulter ChatGPT.
-
----
-
-# 📁 TRACES ATTENDUES — JOUR 1
-
-À la fin de la séance :
-
-```text
-semaine-01/
-│
-├── README.md
-│
-├── exercices/
-│   ├── EX-01-boss.md
-│   ├── EX-01-collaborateur.md
-│   ├── EX-02-boss.md
-│   └── EX-02-collaborateur.md
-│
-├── code/
-│
-├── calculs/
-│   └── CALC-01-identification.jpg
-│
-└── bilan/
-```
-
----
-
-# ✅ NIVEAU ATTENDU EN FIN DE JOURNÉE
-
-### 🟢 VALIDÉ
-
-Vous êtes capables de :
-
-* identifier `X` et `y` ;
-* distinguer feature et target ;
-* expliquer `w`, `b`, `y`, `ŷ` ;
-* expliquer ce qu'est un modèle ;
-* expliquer pourquoi un modèle possède des paramètres ;
-* expliquer la différence entre programmation classique et ML.
-
-### 🟡 PARTIEL
-
-Vous connaissez les définitions mais avez besoin d'aide pour les relier.
-
-### 🔴 NON VALIDÉ
-
-Vous récitez les définitions sans comprendre les relations entre elles.
-
----
-
-# 🟢 JOUR 2 — 05 SEPTEMBRE
-
-# 🚀 Construire notre premier modèle
-
-## Objectif
-
-Nous allons construire un modèle extrêmement simple :
-
-```text
-ŷ = wx + b
-```
-
-Il s'agit d'un modèle linéaire.
-
-⚠️ **Important : nous ne cherchons pas encore à faire du Machine Learning sophistiqué.**
-
-Le but est de comprendre :
-
-```text
-entrée
-   ↓
-modèle
-   ↓
-prédiction
-```
-
-puis :
-
-```text
-prédiction
-   ↓
-comparaison avec la vraie valeur
-   ↓
-erreur
-```
-
----
-
-# 📚 À APPRENDRE
-
-## 1. Poids `w`
-
-Comprendre comment `w` influence la prédiction.
-
-Question fondamentale :
-
-> Que se passe-t-il lorsque `w` augmente ?
-
----
-
-## 2. Biais `b`
-
-Comprendre le rôle du biais.
-
-Question :
-
-> Que se passe-t-il lorsque `b` augmente sans modifier `w` ?
-
----
-
-## 3. Fonction de prédiction
-
-Notre modèle :
-
-```text
-ŷ = wx + b
-```
-
-Nous devons être capables de calculer `ŷ` à la main.
-
----
-
-# ✏️ EXERCICE PAPIER
-
-Prenons :
-
-```text
-x = 5
-w = 2
-b = 3
-```
-
-Calculer :
-
-```text
-ŷ
-```
-
-Puis modifier :
-
-```text
-w = 3
-```
-
-et recalculer.
-
-### Questions
-
-1. Pourquoi la prédiction a-t-elle changé ?
-2. Quelle variable a provoqué ce changement ?
-3. Que représente intuitivement `w` ?
-
-### Fichiers attendus
-
-```text
-calculs/
-├── CALC-01-first-prediction-boss.jpg
-├── CALC-01-first-prediction-collaborateur.jpg
-├── CALC-02-weight-change-boss.jpg
-└── CALC-02-weight-change-collaborateur.jpg
-```
-
----
-
-# 🔬 EXPÉRIENCE
-
-Tester plusieurs valeurs :
-
-```text
-w = 0
-w = 1
-w = 2
-w = 5
-```
-
-en conservant :
-
-```text
-x = 5
-b = 3
-```
-
-Créer un tableau :
-
-|  w |  x |  b |  ŷ |
-| -: | -: | -: | -: |
-|  0 |  5 |  3 |  ? |
-|  1 |  5 |  3 |  ? |
-|  2 |  5 |  3 |  ? |
-|  5 |  5 |  3 |  ? |
-
----
-
-# 💻 CODAGE
-
-Nous allons implémenter nous-mêmes le modèle.
-
-### Contraintes
-
-❌ Pas de scikit-learn
-❌ Pas de PyTorch
-❌ Pas de fonction ML toute faite
-❌ Pas de code copié depuis ChatGPT
-
-✅ Python uniquement.
-
-Vous devez être capables d'écrire vous-mêmes la logique :
-
-```text
-x
-↓
-w
-↓
-b
-↓
-ŷ
-```
-
-### Fichiers attendus
-
-```text
-code/
-├── CODE-01-basic-model-boss.py
-└── CODE-01-basic-model-collaborateur.py
-```
-
----
-
-# 🧪 EXPÉRIENCE 2 — Modifier le modèle
-
-Faire varier :
-
-```text
-x
-w
-b
-```
-
-et observer les prédictions.
-
-Chercher expérimentalement :
-
-> Quelle combinaison de `w` et `b` permet de se rapprocher le plus d'une valeur cible ?
-
-### Fichiers attendus
-
-```text
-code/
-├── CODE-02-experiment-boss.py
-└── CODE-02-experiment-collaborateur.py
-```
-
-et éventuellement :
-
-```text
-exercices/
-├── EXP-01-results-boss.md
-└── EXP-01-results-collaborateur.md
-```
-
----
-
-# 🧠 QUESTIONS DE VALIDATION — JOUR 2
-
-### Niveau 1
-
-* Que représente `x` ?
-* Que représente `w` ?
-* Que représente `b` ?
-* Que représente `ŷ` ?
-
-### Niveau 2
-
-Sans ordinateur :
-
-```text
-x = 4
-w = 3
-b = 2
-```
-
-Calculer la prédiction.
-
-Puis :
-
-```text
-w = 5
-```
-
-Calculer à nouveau.
-
----
-
-### Niveau 3
-
-Expliquez :
-
-> Pourquoi modifier `w` modifie-t-il la prédiction ?
-
-Puis :
-
-> Pourquoi modifier `b` modifie-t-il la prédiction ?
-
----
-
-### Niveau 4 — Challenge
-
-Votre partenaire vous donne :
-
-```text
-x = 10
-```
-
-et vous demande :
-
-> "Trouve `w` et `b` permettant d'obtenir une prédiction de 25."
-
-Vous devez raisonner **sans chercher sur Internet et sans demander à ChatGPT**.
-
-Plusieurs solutions peuvent exister.
-
-Le but est de comprendre la relation entre les paramètres et la sortie.
-
----
-
-# 📁 TRACES ATTENDUES — JOUR 2
-
-```text
-semaine-01/
-│
-├── README.md
-│
-├── exercices/
-│   ├── EX-01-boss.md
-│   ├── EX-01-collaborateur.md
-│   ├── EX-02-boss.md
-│   ├── EX-02-collaborateur.md
-│   ├── EXP-01-results-boss.md
-│   └── EXP-01-results-collaborateur.md
-│
-├── code/
-│   ├── CODE-01-basic-model-boss.py
-│   ├── CODE-01-basic-model-collaborateur.py
-│   ├── CODE-02-experiment-boss.py
-│   └── CODE-02-experiment-collaborateur.py
-│
-├── calculs/
-│   ├── CALC-01-first-prediction-boss.jpg
-│   ├── CALC-01-first-prediction-collaborateur.jpg
-│   ├── CALC-02-weight-change-boss.jpg
-│   └── CALC-02-weight-change-collaborateur.jpg
-│
-└── bilan/
-```
-
----
-
-# ✅ NIVEAU ATTENDU EN FIN DE JOURNÉE
-
-Vous devez être capables de :
-
-* calculer `ŷ = wx + b` sans aide ;
-* expliquer le rôle de `w` ;
-* expliquer le rôle de `b` ;
-* coder le modèle vous-mêmes ;
-* modifier les paramètres ;
-* observer leur impact ;
-* expliquer pourquoi le modèle peut produire différentes prédictions.
-
----
-
-# 🔵 DIMANCHE 06 SEPTEMBRE — BILAN
-
-# 📋 WEEKLY REVIEW
-
-Le dimanche est consacré au **compte rendu, aux cases et au bilan**.
-
-Aucune nouvelle notion obligatoire.
-
----
-
-# 1️⃣ CHECKLIST
-
-### Compréhension
-
-* [ ] Je sais définir un modèle ML.
-* [ ] Je sais expliquer ce qu'est une donnée.
-* [ ] Je sais identifier une feature.
-* [ ] Je sais identifier une target.
-* [ ] Je comprends `y`.
-* [ ] Je comprends `ŷ`.
-* [ ] Je comprends le rôle de `w`.
-* [ ] Je comprends le rôle de `b`.
-
-### Mathématiques
-
-* [ ] Je peux calculer `ŷ = wx + b`.
-* [ ] Je peux modifier `w` et prévoir son effet.
-* [ ] Je peux modifier `b` et prévoir son effet.
-
-### Programmation
-
-* [ ] Je peux coder le modèle sans assistance.
-* [ ] Je peux modifier ses paramètres.
-* [ ] Je peux tester plusieurs entrées.
-* [ ] Je comprends mon propre code.
-
-### Explication
-
-* [ ] Je peux expliquer le fonctionnement du modèle à mon partenaire.
-* [ ] Je peux répondre à une question imprévue.
-* [ ] Je peux expliquer sans lire mes notes.
-
----
-
-# 2️⃣ EXAMEN PAPIER ✏️
-
-## Question 1
-
-On possède :
-
-```text
-x = 7
-w = 3
-b = 2
-```
-
-Calculer `ŷ`.
-
----
-
-## Question 2
-
-On obtient :
-
-```text
-ŷ = 23
-y = 25
-```
-
-Quelle est l'erreur ?
-
----
-
-## Question 3
-
-Si `w` augmente :
-
-> Quel effet cela peut-il avoir sur `ŷ` ?
-
-Expliquez **pourquoi**, pas seulement le résultat.
-
----
-
-## Question 4
-
-Quelle différence fondamentale existe entre :
-
-```text
-ŷ
-```
-
-et :
-
-```text
-y
-```
-
----
-
-## Question 5 — Conceptuelle
-
-Expliquez cette phrase :
-
-> "Un modèle de Machine Learning apprend des paramètres à partir de données."
-
-Votre réponse doit expliquer :
-
-```text
-données
-   ↓
-modèle
-   ↓
-paramètres
-   ↓
-prédiction
-```
-
----
-
-# 3️⃣ EXAMEN ORAL 🗣️
-
-Chaque personne dispose de **5 minutes**.
-
-Le partenaire joue le rôle du professeur.
-
-Il peut demander :
-
-> Pourquoi `w` existe ?
-
-> Pourquoi `b` existe ?
-
-> Pourquoi avons-nous besoin de données ?
-
-> Pourquoi la prédiction n'est-elle pas forcément correcte ?
-
-> Est-ce que changer `w` change toujours la prédiction ?
-
-> Est-ce qu'un modèle est une simple formule ?
-
-> Quelle différence entre programmer une règle et entraîner un modèle ?
-
----
-
-# 4️⃣ EXAMEN CODE 💻
-
-### Mission
-
-Repartir d'un fichier Python vide.
-
-Sans ChatGPT :
-
-1. créer une entrée `x` ;
-2. créer `w` ;
-3. créer `b` ;
-4. calculer `ŷ` ;
-5. afficher le résultat ;
-6. modifier `w` ;
-7. observer le changement.
-
-### Règle
-
-Si vous bloquez :
-
-**10 minutes de réflexion → notes → nouvelle tentative → seulement ensuite demander de l'aide.**
-
-L'objectif est de développer votre capacité à coder **sans dépendre de l'IA**.
-
----
-
-# 📊 SCORE DE LA SEMAINE
-
-Attribuer une note sur 20 :
-
-| Domaine               |  Points |
+| Critère               |  Points |
 | --------------------- | ------: |
 | Compréhension         |      /5 |
 | Mathématiques         |      /5 |
 | Programmation         |      /5 |
 | Explication / défense |      /5 |
-| **TOTAL**             | **/20** |
+| **Total**             | **/20** |
 
-### 🟢 16–20
+### Interprétation
 
-Notion validée.
+* 🟢 **16–20** → notion/semaine validée
+* 🟡 **12–15** → validation partielle, remédiation nécessaire
+* 🔴 **<12** → semaine à retravailler
 
-### 🟡 12–15
-
-Compréhension correcte mais une faiblesse doit être identifiée.
-
-### 🔴 <12
-
-La notion n'est pas suffisamment maîtrisée.
-
-➡️ La semaine suivante commence par une **remédiation** avant de poursuivre.
+Le score n'est pas une fin en soi : il sert à identifier les lacunes.
 
 ---
 
-# 📝 COMPTE RENDU DU DIMANCHE
+# 📅 Organisation hebdomadaire
 
-À remplir dans :
+Chaque semaine comporte :
+
+### 🧠 4 jours d'apprentissage
+
+Chaque journée possède :
+
+* une notion principale ;
+* une explication ;
+* des exercices ;
+* du calcul sur papier ;
+* de la pratique de code ;
+* une validation de la notion.
+
+### 📋 Dimanche — Révision et bilan
+
+Le dimanche est réservé à :
+
+* révision de la semaine ;
+* exercices de synthèse ;
+* calculs sans aide ;
+* test de code ;
+* explication orale ;
+* correction des erreurs ;
+* score /20 ;
+* décision : **continuer ou remédier**.
+
+Aucune nouvelle notion importante ne doit être introduite le dimanche.
+
+---
+
+# 🧭 Principe d'adaptation
+
+Le calendrier ne passe jamais avant la compréhension.
+
+Si une notion est mal maîtrisée :
 
 ```text
-bilan/
+Notion
+   ↓
+Exercices
+   ↓
+Évaluation
+   ↓
+❌ Lacune
+   ↓
+Remédiation
+   ↓
+Nouvelle évaluation
+   ↓
+🟢 Validation
+   ↓
+Notion suivante
 ```
 
-## `bilan/README.md`
-
-```markdown
-# 📋 Bilan — Semaine 01
-
-## 🎯 Objectif de la semaine
-
-...
-
-## 🧠 Ce que j'ai appris
-
-- ...
-- ...
-- ...
-
-## 💻 Ce que je sais coder seul
-
-- ...
-- ...
-- ...
-
-## ✏️ Ce que je sais calculer
-
-- ...
-- ...
-- ...
-
-## ⚠️ Mes difficultés
-
-- ...
-- ...
-- ...
-
-## ❌ Mes principales erreurs
-
-- ...
-- ...
-- ...
-
-## ❓ Questions encore ouvertes
-
-- ...
-- ...
-- ...
-
-## 🟢 Notions validées
-
-- [ ] Modèle
-- [ ] Données
-- [ ] Features
-- [ ] Target
-- [ ] Paramètres
-- [ ] Poids
-- [ ] Biais
-- [ ] Prédiction
-
-## 📊 Score
-
-### Boss
-
-__/20
-
-### Collaborateur
-
-__/20
-
-## 🎯 Remédiation
-
-...
-
-## 🚀 Objectif de la semaine suivante
-
-...
-```
+L'objectif est de construire des bases solides plutôt que d'avancer rapidement avec des lacunes.
 
 ---
 
-# `bilan/erreurs.md`
+# 🚀 Objectif de fin de parcours
 
-Conserver uniquement les erreurs importantes.
-
-```markdown
-# ❌ Erreurs importantes
-
-## Erreur 01
-
-### Ce que j'ai fait
-
-...
-
-### Pourquoi c'était faux
-
-...
-
-### Correction
-
-...
-
-### Ce que je retiens
-
-...
-```
-
----
-
-# `bilan/validation.md`
-
-```markdown
-# 🟢 Validation — Semaine 01
-
-## Boss
-
-- [ ] Niveau 1 — Comprendre
-- [ ] Niveau 2 — Calculer
-- [ ] Niveau 3 — Coder
-- [ ] Niveau 4 — Défendre
-
-### Résultat
-
-🟢 VALIDÉ / 🟡 PARTIEL / 🔴 NON VALIDÉ
-
----
-
-## Collaborateur
-
-- [ ] Niveau 1 — Comprendre
-- [ ] Niveau 2 — Calculer
-- [ ] Niveau 3 — Coder
-- [ ] Niveau 4 — Défendre
-
-### Résultat
-
-🟢 VALIDÉ / 🟡 PARTIEL / 🔴 NON VALIDÉ
-```
-
----
-
-# 🏆 CRITÈRE DE RÉUSSITE DE LA SEMAINE 01
-
-La semaine est considérée comme réussie si chacun des deux membres peut, **individuellement et sans IA**, expliquer et implémenter :
+À la fin du parcours, l'objectif est d'être capable de partir d'un problème et de comprendre la chaîne :
 
 ```text
-X
-↓
-modèle
-↓
-w, b
-↓
-ŷ
-↓
-comparaison avec y
+Données
+   ↓
+Features
+   ↓
+Modèle
+   ↓
+Paramètres
+   ↓
+Prédiction
+   ↓
+Loss
+   ↓
+Gradient
+   ↓
+Mise à jour des paramètres
+   ↓
+Entraînement
+   ↓
+Modèle entraîné
 ```
 
-Le but n'est pas encore de connaître beaucoup de concepts.
-
-Le but est de construire la première brique de notre compréhension :
-
-> **Un modèle est une structure paramétrée qui transforme des entrées en prédictions, et l'apprentissage consistera ensuite à trouver de meilleurs paramètres à partir des données.**
-
----
-
-# 🔒 RÈGLES DU PROJET
-
-## 1. Pas de vibecoding
-
-Pendant les exercices :
-
-**Nous essayons d'abord nous-mêmes.**
-
-L'IA peut servir à :
-
-* expliquer une notion ;
-* poser des questions ;
-* donner un indice ;
-* analyser une erreur après tentative.
-
-Elle ne doit pas devenir :
-
-> "Donne-moi le code."
-
----
-
-## 2. Chaque membre doit coder
-
-Même si une personne comprend mieux :
+Puis de poursuivre vers :
 
 ```text
-Personne A → implémente
-Personne B → explique/review
+Modèle entraîné
+      ↓
+Embeddings
+      ↓
+Attention
+      ↓
+Transformer
+      ↓
+LLM
+      ↓
+Fine-tuning
+      ↓
+Évaluation
+      ↓
+Déploiement
+      ↓
+API / RAG / Agents / Applications
 ```
 
-puis on inverse.
+---
+
+# 📈 Progression générale
+
+* [ ] Semaine 01 — Fondamentaux
+* [ ] Semaine 02 — Vecteurs
+* [ ] Semaine 03 — Matrices
+* [ ] Semaine 04 — Calcul différentiel
+* [ ] Semaine 05 — Gradient Descent
+* [ ] Semaine 06 — Régression linéaire
+* [ ] Semaine 07 — Classification
+* [ ] Semaine 08 — Évaluation et régularisation
+* [ ] Semaine 09 — Réseaux de neurones
+* [ ] Semaine 10 — Backpropagation
+* [ ] Semaine 11 — PyTorch
+* [ ] Semaine 12 — Transformers
+* [ ] Semaine 13 — Fine-tuning
+* [ ] Examen final
 
 ---
 
-## 3. Comprendre > mémoriser
+# 🏁 Règle finale
 
-Une formule récitée mais non comprise = ❌ non validée.
+> **Comprendre → Calculer → Coder → Expliquer → Valider → Avancer.**
 
----
-
-## 4. Une notion non maîtrisée bloque la progression
-
-Nous ne poursuivons pas simplement parce que le calendrier dit d'avancer.
-
-**Compréhension insuffisante → remédiation → nouvelle validation.**
-
----
-
-# 🚀 PROCHAINE ÉTAPE
-
-Si la semaine 01 est validée, nous attaquerons :
-
-**Semaine 02 → vecteurs, normes, distances et produit scalaire.**
-
-Ces notions seront directement reliées aux représentations numériques que nous utiliserons ensuite en Machine Learning.
+Pas l'inverse.
