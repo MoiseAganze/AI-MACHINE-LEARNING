@@ -1,356 +1,503 @@
-# 🤖 AI-MACHINE-LEARNING
+# Plan d'apprentissage Machine Learning & Deep Learning
 
-Parcours personnel d'apprentissage du **Machine Learning, Deep Learning et des LLMs**, réalisé en collaboration avec un partenaire.
-
----
-
-## 🎯 Objectif global
-
-Construire une compréhension solide et pratique de l'IA, depuis les fondamentaux mathématiques et du Machine Learning jusqu'à la compréhension, l'entraînement et la personnalisation de modèles modernes.
-
-À terme, être capable de :
-
-* comprendre comment fonctionne un modèle de Machine Learning ;
-* comprendre les mathématiques utilisées par les modèles ;
-* implémenter les mécanismes fondamentaux soi-même ;
-* entraîner des modèles ;
-* comprendre les réseaux de neurones et le backpropagation ;
-* comprendre les embeddings et les Transformers ;
-* comprendre l'architecture et le fonctionnement des LLMs ;
-* prendre un modèle open source et le personnaliser / fine-tuner ;
-* évaluer correctement un modèle ;
-* puis, dans une étape ultérieure, rendre ces modèles exploitables via des APIs, applications, agents, RAG, etc.
-
-> ⚠️ L'objectif n'est pas de simplement savoir utiliser des bibliothèques d'IA.
->
-> L'objectif est de **comprendre ce qui se passe sous le capot et être capable de le reproduire soi-même à petite échelle.**
+> **Période : 3 septembre → 30 novembre 2026**  
+> **Objectif :** construire progressivement les bases mathématiques, comprendre les mécanismes fondamentaux du Machine Learning et du Deep Learning, puis être capable d'entraîner, évaluer et adapter un modèle moderne sur un problème réel.
 
 ---
 
-# 🗺️ Roadmap
+## 1. Vision générale
 
-| Semaine | Période            | Thème                                                  | Statut      |
-| ------- | ------------------ | ------------------------------------------------------ | ----------- |
-| 01      | 03 → 06 sept.      | Fondamentaux : modèle, données, paramètres, prédiction | 🟡 En cours |
-| 02      | 07 → 13 sept.      | Vecteurs, normes, distances, produit scalaire          | ⬜           |
-| 03      | 14 → 20 sept.      | Matrices et transformations                            | ⬜           |
-| 04      | 21 → 27 sept.      | Dérivées, fonction de coût, règle de chaîne            | ⬜           |
-| 05      | 28 sept. → 04 oct. | Gradient Descent                                       | ⬜           |
-| 06      | 05 → 11 oct.       | Régression linéaire                                    | ⬜           |
-| 07      | 12 → 18 oct.       | Classification et régression logistique                | ⬜           |
-| 08      | 19 → 25 oct.       | Évaluation, overfitting, underfitting, régularisation  | ⬜           |
-| 09      | 26 oct. → 01 nov.  | Réseaux de neurones et forward pass                    | ⬜           |
-| 10      | 02 → 08 nov.       | Backpropagation                                        | ⬜           |
-| 11      | 09 → 15 nov.       | PyTorch et entraînement réel                           | ⬜           |
-| 12      | 16 → 22 nov.       | Embeddings, attention et Transformers                  | ⬜           |
-| 13      | 23 → 29 nov.       | Modèles open source et fine-tuning                     | ⬜           |
-| 🏁      | 30 nov.            | Examen pratique final                                  | ⬜           |
+Le parcours repose sur trois livres complémentaires :
 
-### Légende
-
-* ⬜ À faire
-* 🟡 En cours
-* 🟢 Validé
-* 🔴 À retravailler
-
-> Les dates sont indicatives. Le parcours est **adaptatif** : une notion non maîtrisée doit être retravaillée avant de passer à la suivante.
+1. **Math for ML** — construire les fondations mathématiques nécessaires au ML.
+2. **Hands-On Machine Learning** — apprendre à transformer les concepts en modèles et expérimentations concrètes.
+3. **Deep Learning — Goodfellow, Bengio & Courville** — comprendre les fondements théoriques du Deep Learning.
 
 ---
 
-# 📚 Organisation du dépôt
+# 2. Plan hebdomadaire
 
-Chaque semaine possède son propre espace de travail.
+## Semaine 1 — 3 → 6 septembre
+### Fondamentaux du Machine Learning
+
+**Objectif**
+
+Comprendre ce qu'est un modèle de Machine Learning, ce que représentent les données, les paramètres, les prédictions, la fonction de coût et l'entraînement.
+
+
+### Critère de validation
+
+Tu dois pouvoir répondre clairement à :
+
+> Qu'est-ce qu'un modèle ?  
+> Qu'est-ce qu'un paramètre ?  
+> Qu'est-ce qu'une prédiction ?  
+> Pourquoi entraîne-t-on un modèle ?
+
+---
+
+# Semaine 2 — 7 → 13 septembre
+## Vecteurs, normes, distances et produit scalaire
+
+**Objectif**
+
+Comprendre comment les données numériques sont représentées mathématiquement et comment mesurer leur position, leur longueur et leur similarité.
+
+### Critère de validation
+
+Être capable d'expliquer pourquoi un exemple de données ML peut être représenté par un vecteur.
+
+---
+
+# Semaine 3 — 14 → 20 septembre
+## Matrices et transformations
+
+**Objectif**
+
+Passer des vecteurs aux matrices et comprendre les matrices comme des opérateurs capables de transformer les données.
+
+### Critère de validation
+
+Comprendre :
 
 ```text
-AI-MACHINE-LEARNING/
-│
+vecteur → matrice → vecteur transformé
+```
+
+et savoir expliquer ce que fait chaque dimension.
+
+---
+
+# Semaine 4 — 21 → 27 septembre
+## Fonctions, dérivées et règle de chaîne
+
+**Objectif**
+
+Comprendre le calcul différentiel nécessaire pour optimiser un modèle.
+
+### Critère de validation
+
+Comprendre intuitivement :
+
+> Le gradient indique dans quelle direction une fonction augmente le plus rapidement.
+
+---
+
+# Semaine 5 — 28 septembre → 4 octobre
+## Optimisation et Gradient Descent
+
+**Objectif**
+
+Comprendre comment un modèle apprend ses paramètres.
+
+
+### Critère de validation
+
+Pouvoir expliquer précisément :
+
+```text
+θ ← θ - η ∇J(θ)
+```
+
+où `θ` représente les paramètres, `η` le learning rate et `J` la fonction de coût.
+
+---
+
+# Semaine 6 — 5 → 11 octobre
+## Régression linéaire
+
+**Objectif**
+
+Construire le premier véritable modèle ML de bout en bout.
+
+### Critère de validation
+
+Être capable d'expliquer la différence entre :
+
+- apprendre les paramètres analytiquement ;
+- apprendre les paramètres avec Gradient Descent ;
+- utiliser une implémentation de bibliothèque.
+
+---
+
+# Semaine 7 — 12 → 18 octobre
+## Classification et régression logistique
+
+**Objectif**
+
+Passer de la prédiction d'une valeur continue à la prédiction d'une classe.
+
+### Critère de validation
+
+Comprendre pourquoi :
+
+> Une bonne accuracy ne signifie pas forcément qu'un classifieur est bon.
+
+---
+
+# Semaine 8 — 19 → 25 octobre
+## Évaluation, surapprentissage et régularisation
+
+**Objectif**
+
+Comprendre comment savoir si un modèle apprend réellement et comment contrôler sa capacité à généraliser.
+
+### Critère de validation
+
+Pouvoir diagnostiquer :
+
+```text
+Underfitting
+     vs
+Good fit
+     vs
+Overfitting
+```
+
+et proposer une correction.
+
+---
+
+# Semaine 9 — 26 octobre → 1er novembre
+## Réseaux de neurones et Forward Pass
+
+**Objectif**
+
+Comprendre la structure interne d'un réseau de neurones et calculer une prédiction couche par couche.
+
+### Critère de validation
+
+Être capable de calculer à la main le résultat d'un petit réseau comportant quelques neurones.
+
+---
+
+# Semaine 10 — 2 → 8 novembre
+## Backpropagation
+
+**Objectif**
+
+Comprendre comment un réseau de neurones calcule les gradients de ses paramètres.
+
+
+### Critère de validation
+
+Pouvoir expliquer :
+
+> Comment l'erreur calculée à la sortie influence les poids situés plusieurs couches plus tôt ?
+
+---
+
+# Semaine 11 — 9 → 15 novembre
+## PyTorch et entraînement réel
+
+**Objectif**
+
+Passer de l'implémentation pédagogique à un framework moderne de Deep Learning.
+
+### Critère de validation
+
+Être capable d'écrire sans tutoriel un training loop PyTorch simple.
+
+---
+
+# Semaine 12 — 16 → 22 novembre
+## Embeddings, attention et Transformers
+
+**Objectif**
+
+Comprendre le passage des réseaux classiques aux architectures modernes utilisées notamment en NLP et dans les modèles de langage.
+
+### Critère de validation
+
+Pouvoir répondre à :
+
+> Pourquoi l'attention permet-elle à un modèle de relier des éléments éloignés dans une séquence ?
+
+---
+
+# Semaine 13 — 23 → 29 novembre
+## Modèles open source et Fine-Tuning
+
+**Objectif**
+
+Passer de la compréhension des architectures à l'utilisation de modèles pré-entraînés.
+
+### Critère de validation
+
+Être capable d'expliquer la différence entre :
+
+- entraîner un modèle from scratch ;
+- utiliser un modèle pré-entraîné ;
+- faire du transfer learning ;
+- faire du fine-tuning.
+
+---
+
+# 3. 30 novembre — Examen pratique final
+
+## Objectif
+
+Réaliser un mini-projet ML/DL complet sans suivre un tutoriel étape par étape.
+
+### Sujet
+
+Choisir un problème réel de :
+
+- régression ;
+- classification ;
+- traitement de texte ;
+- ou autre problème adapté au niveau atteint.
+
+### Pipeline attendu
+
+```text
+1. Définition du problème
+          ↓
+2. Collecte / chargement des données
+          ↓
+3. Exploration
+          ↓
+4. Préprocessing
+          ↓
+5. Séparation train / validation / test
+          ↓
+6. Baseline
+          ↓
+7. Modèle
+          ↓
+8. Fonction de coût
+          ↓
+9. Entraînement
+          ↓
+10. Évaluation
+          ↓
+11. Analyse des erreurs
+          ↓
+12. Amélioration
+          ↓
+13. Résultat final
+```
+
+### Livrables finaux
+
+Le projet doit contenir :
+
+```text
+project/
 ├── README.md
-│
-├── semaine-01/
-│   ├── README.md
-│   ├── exercices/
-│   ├── code/
-│   ├── calculs/
-│   └── bilan/
-│
-├── semaine-02/
-│   ├── README.md
-│   ├── exercices/
-│   ├── code/
-│   ├── calculs/
-│   └── bilan/
-│
-├── semaine-03/
-│   └── ...
-│
-└── ...
+├── data/
+├── notebooks/
+├── src/
+├── models/
+├── requirements.txt
+└── results/
 ```
 
-### 📌 Rôle des dossiers
-
-**`README.md` racine**
-
-Vue d'ensemble du parcours et suivi de progression.
-
-**`semaine-X/README.md`**
-
-Cours, programme, exercices et critères de validation de la semaine.
-
-**`exercices/`**
-
-Réponses aux exercices et raisonnements.
-
-**`code/`**
-
-Implémentations Python et expériences.
-
-**`calculs/`**
-
-Calculs réalisés sur papier, photos ou captures.
-
-**`bilan/`**
-
-Erreurs, difficultés, validation et score de la semaine.
+Le `README.md` doit expliquer le projet de manière reproductible.
 
 ---
 
-# 🧠 Méthode d'apprentissage
+# 4. Progression des livrables
 
-Chaque notion doit être validée sur **4 niveaux** :
-
-### 1. Comprendre
-
-Être capable d'expliquer la notion avec ses propres mots.
-
-### 2. Calculer
-
-Être capable de résoudre un exercice à la main.
-
-### 3. Implémenter
-
-Être capable de coder le mécanisme sans copier une solution.
-
-### 4. Expliquer
-
-Être capable d'enseigner la notion à son partenaire et de répondre à ses questions.
-
-Une notion n'est considérée comme **🟢 validée** que lorsque les quatre niveaux sont suffisamment maîtrisés.
+| Semaine | Livrable principal |
+|---|---|
+| W1 | Comprendre et expliquer un modèle ML |
+| W2 | Module vecteurs / normes / distances |
+| W3 | Transformations matricielles |
+| W4 | Dérivées et gradients |
+| W5 | Gradient Descent from scratch |
+| W6 | Régression linéaire |
+| W7 | Classification + métriques |
+| W8 | Diagnostic overfitting / underfitting |
+| W9 | Réseau de neurones + forward pass |
+| W10 | Backpropagation from scratch |
+| W11 | Réseau entraîné avec PyTorch |
+| W12 | Attention + utilisation d'un Transformer |
+| W13 | Adaptation / fine-tuning d'un modèle pré-entraîné |
+| 30 nov. | Projet ML/DL complet |
 
 ---
 
-# 💻 Règle concernant l'IA
+# 5. Architecture pédagogique du parcours
 
-L'IA peut être utilisée comme :
-
-* professeur ;
-* source d'explications ;
-* outil de vérification ;
-* générateur d'indices ;
-* outil d'analyse des erreurs.
-
-Mais elle ne doit pas remplacer le travail d'apprentissage.
-
-### ❌ À éviter
-
-* copier du code sans le comprendre ;
-* demander directement la solution d'un exercice ;
-* faire du *vibecoding* ;
-* recopier une implémentation sans être capable de la refaire seul.
-
-### ✅ À privilégier
-
-1. réfléchir seul ;
-2. écrire son raisonnement ;
-3. essayer sur papier ;
-4. coder soi-même ;
-5. identifier son erreur ;
-6. demander un indice si nécessaire ;
-7. corriger ;
-8. refaire l'exercice sans aide.
-
----
-
-# 👥 Travail en collaboration
-
-Le dépôt est partagé entre deux personnes :
-
-* **Boss**
-* **Collaborateur**
-
-Chaque personne doit effectuer elle-même les exercices et implémentations importants.
-
-Structure Git :
+Le parcours suit volontairement cette chaîne :
 
 ```text
-main
-├── boss
-└── collaborateur
+MATHÉMATIQUES
+     │
+     ├── Vecteurs
+     ├── Matrices
+     ├── Fonctions
+     ├── Dérivées
+     ├── Gradients
+     └── Optimisation
+             │
+             ▼
+     MACHINE LEARNING
+             │
+     ├── Régression
+     ├── Classification
+     ├── Évaluation
+     ├── Généralisation
+     └── Régularisation
+             │
+             ▼
+      DEEP LEARNING
+             │
+     ├── Neurones
+     ├── Forward pass
+     ├── Backpropagation
+     ├── Optimisation
+     └── Régularisation
+             │
+             ▼
+      MODÈLES MODERNES
+             │
+     ├── Embeddings
+     ├── Attention
+     ├── Transformers
+     ├── Modèles pré-entraînés
+     └── Fine-tuning
 ```
 
-Avant la validation hebdomadaire :
+L'idée centrale est de ne pas apprendre ces sujets comme des chapitres indépendants. Chaque nouvelle notion doit répondre à une question apparue précédemment.
 
-1. chacun termine son travail ;
-2. chacun relit le travail de l'autre ;
-3. les erreurs sont corrigées ;
-4. les notions difficiles sont discutées ;
-5. le bilan est rempli ;
-6. les modifications sont fusionnées dans `main`.
+Par exemple :
 
----
+**Pourquoi les dérivées ?**
 
-# 📊 Validation hebdomadaire
+→ Parce qu'il faut calculer comment modifier les paramètres.
 
-Chaque semaine est évaluée sur **20 points**.
+**Pourquoi le gradient ?**
 
-| Critère               |  Points |
-| --------------------- | ------: |
-| Compréhension         |      /5 |
-| Mathématiques         |      /5 |
-| Programmation         |      /5 |
-| Explication / défense |      /5 |
-| **Total**             | **/20** |
+→ Parce qu'un modèle possède plusieurs paramètres.
 
-### Interprétation
+**Pourquoi Gradient Descent ?**
 
-* 🟢 **16–20** → notion/semaine validée
-* 🟡 **12–15** → validation partielle, remédiation nécessaire
-* 🔴 **<12** → semaine à retravailler
+→ Parce qu'on veut minimiser une fonction de coût.
 
-Le score n'est pas une fin en soi : il sert à identifier les lacunes.
+**Pourquoi Backpropagation ?**
+
+→ Parce qu'un réseau contient de nombreuses couches et qu'il faut calculer efficacement les gradients.
+
+**Pourquoi les Transformers ?**
+
+→ Parce que les représentations et mécanismes d'attention permettent de traiter efficacement les dépendances dans des séquences et ont conduit à de nombreuses architectures modernes.
 
 ---
 
-# 📅 Organisation hebdomadaire
+# 6. Règle de validation hebdomadaire
 
-Chaque semaine comporte :
+Une semaine n'est pas considérée comme terminée simplement parce que les chapitres ont été lus.
 
-### 🧠 4 jours d'apprentissage
+Elle est validée lorsque les trois niveaux suivants sont atteints :
 
-Chaque journée possède :
+### Niveau 1 — Compréhension
 
-* une notion principale ;
-* une explication ;
-* des exercices ;
-* du calcul sur papier ;
-* de la pratique de code ;
-* une validation de la notion.
+> Je peux expliquer le concept avec mes propres mots.
 
-### 📋 Dimanche — Révision et bilan
+### Niveau 2 — Mathématiques
 
-Le dimanche est réservé à :
+> Je peux comprendre ou reproduire les équations essentielles.
 
-* révision de la semaine ;
-* exercices de synthèse ;
-* calculs sans aide ;
-* test de code ;
-* explication orale ;
-* correction des erreurs ;
-* score /20 ;
-* décision : **continuer ou remédier**.
+### Niveau 3 — Implémentation
 
-Aucune nouvelle notion importante ne doit être introduite le dimanche.
+> Je peux écrire ou utiliser le mécanisme dans un programme.
+
+Pour les semaines centrales, ajouter un quatrième niveau :
+
+### Niveau 4 — Analyse
+
+> Je peux interpréter les résultats et expliquer pourquoi le modèle fonctionne ou échoue.
 
 ---
 
-# 🧭 Principe d'adaptation
+# 7. Priorité entre les trois livres
 
-Le calendrier ne passe jamais avant la compréhension.
+En cas de manque de temps, suivre cette priorité :
 
-Si une notion est mal maîtrisée :
+### Pour les mathématiques
+
+**Math for ML > Deep Learning**
+
+Math for ML sert de référence principale pour les bases mathématiques.
+
+### Pour le Machine Learning classique
+
+**Hands-On ML > Deep Learning**
+
+Hands-On ML est plus directement orienté vers l'implémentation et l'expérimentation.
+
+### Pour le Deep Learning théorique
+
+**Deep Learning > Hands-On ML**
+
+Goodfellow fournit le cadre théorique permettant de comprendre les mécanismes fondamentaux.
+
+### Pour les Transformers
+
+**Hands-On ML Ch. 16 > autres livres**
+
+Le livre de Goodfellow est fondamental pour le Deep Learning, mais il ne constitue pas une référence moderne sur les Transformers. Le chapitre 16 de Hands-On ML est donc la lecture principale pour cette partie.
+
+### Pour PyTorch
+
+Les trois livres ne constituent pas une ressource PyTorch dédiée.
+
+Le plan utilise Hands-On ML et Deep Learning pour les concepts, mais **PyTorch doit être complété par une ressource pratique dédiée**.
+
+---
+
+# 8. Résultat attendu au 30 novembre
+
+À la fin du parcours, l'objectif n'est pas de connaître tous les algorithmes de Machine Learning.
+
+L'objectif est d'être capable de passer de :
 
 ```text
-Notion
-   ↓
-Exercices
-   ↓
-Évaluation
-   ↓
-❌ Lacune
-   ↓
-Remédiation
-   ↓
-Nouvelle évaluation
-   ↓
-🟢 Validation
-   ↓
-Notion suivante
+"J'ai un problème et des données"
 ```
 
-L'objectif est de construire des bases solides plutôt que d'avancer rapidement avec des lacunes.
-
----
-
-# 🚀 Objectif de fin de parcours
-
-À la fin du parcours, l'objectif est d'être capable de partir d'un problème et de comprendre la chaîne :
+à :
 
 ```text
-Données
-   ↓
-Features
-   ↓
-Modèle
-   ↓
-Paramètres
-   ↓
-Prédiction
-   ↓
-Loss
-   ↓
-Gradient
-   ↓
-Mise à jour des paramètres
-   ↓
-Entraînement
-   ↓
-Modèle entraîné
+"J'ai défini le problème,
+préparé les données,
+choisi une baseline,
+construit un modèle,
+compris sa fonction de coût,
+entraîné le modèle,
+évalué ses performances,
+analysé ses erreurs
+et amélioré son comportement."
 ```
 
-Puis de poursuivre vers :
+Et, pour le Deep Learning :
 
 ```text
-Modèle entraîné
-      ↓
-Embeddings
-      ↓
-Attention
-      ↓
-Transformer
-      ↓
-LLM
-      ↓
-Fine-tuning
-      ↓
-Évaluation
-      ↓
-Déploiement
-      ↓
-API / RAG / Agents / Applications
+Je comprends
+    ↓
+le neurone
+    ↓
+le forward pass
+    ↓
+la loss
+    ↓
+le gradient
+    ↓
+la backpropagation
+    ↓
+l'optimisation
+    ↓
+la régularisation
+    ↓
+les embeddings
+    ↓
+l'attention
+    ↓
+les Transformers
+    ↓
+le fine-tuning
 ```
 
----
-
-# 📈 Progression générale
-
-* [ ] Semaine 01 — Fondamentaux
-* [ ] Semaine 02 — Vecteurs
-* [ ] Semaine 03 — Matrices
-* [ ] Semaine 04 — Calcul différentiel
-* [ ] Semaine 05 — Gradient Descent
-* [ ] Semaine 06 — Régression linéaire
-* [ ] Semaine 07 — Classification
-* [ ] Semaine 08 — Évaluation et régularisation
-* [ ] Semaine 09 — Réseaux de neurones
-* [ ] Semaine 10 — Backpropagation
-* [ ] Semaine 11 — PyTorch
-* [ ] Semaine 12 — Transformers
-* [ ] Semaine 13 — Fine-tuning
-* [ ] Examen final
-
----
-
-# 🏁 Règle finale
-
-> **Comprendre → Calculer → Coder → Expliquer → Valider → Avancer.**
-
-Pas l'inverse.
+C'est cette chaîne de compréhension et de pratique qui constitue l'objectif réel du parcours.
